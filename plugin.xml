@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="net.sunqj.windowbackground" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>WindowBackground</name>
+    <js-module name="WindowBackground" src="www/WindowBackground.js">
+        <clobbers target="cordova.plugins.WindowBackground"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="WindowBackground">
+                <param name="android-package" value="net.sunqj.windowbackground.WindowBackground"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"/>
+        <source-file src="src/android/styles.xml" target-dir="res/values"/>
+        <source-file src="src/android/WindowBackground.java"
+                     target-dir="src/net/sunqj/windowbackground/WindowBackground"/>
+    </platform>
+</plugin>
